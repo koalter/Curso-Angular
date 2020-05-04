@@ -1,0 +1,30 @@
+<div class="jumbotron">
+    <h2>Usuarios</h2>
+    <hr>
+
+    <!-- <ul>
+        <li *ngFor="let usuario of usuarios">
+            <pre>{{ usuario | json }}</pre>
+        </li>
+    </ul> -->
+
+    <button class="btn btn-success m-3" (click)="obtenerUsuarios()">GET</button>
+    <button class="btn btn-info m-3" (click)="enviarUsuario()">POST</button>
+    <hr>
+
+    <div class="media alert alert-info" *ngFor="let usuario of usuarios; index as i">
+        <img [src]="usuario.foto" width="200" [ngStyle]="{'border-radius': '15px'}" alt="foto de {{ usuario.nombre }}">
+        <div class="media-body ml-4">
+            <h4>Usuario: {{ i+1 }} - Id: {{ usuario.id }} - Creado: {{ formatFecha(usuario.createdAt) }}</h4>
+            <br>
+            <p>Nombre: <a [href]="usuario.foto">{{ usuario.nombre }}</a></p>
+            <p>Nombre: <b>{{ usuario.nombre }}</b></p>
+            <p>Descripcion: <i>{{ usuario.descripcion }}</i></p>
+            <p>Coordenadas: <u>{{ usuario.coordenadas }}</u></p>
+            <p>Comentarios: <u>{{ usuario.comentarios }}</u></p>
+            <button class="btn btn-danger m-3" (click)="eliminarUsuario(usuario.id)">Eliminar</button>
+            <button class="btn btn-warning m-3" (click)="actualizarUsuario(usuario.id)">Actualizar</button>
+        </div>
+    </div>
+
+</div>

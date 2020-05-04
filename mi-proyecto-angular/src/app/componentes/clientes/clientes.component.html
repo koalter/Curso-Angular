@@ -1,0 +1,13 @@
+<div class="jumbotron">
+    <h2>Clientes - id: {{ this.id }}</h2>
+    <hr>
+
+    <h5>Clientes (desde el servicio clientes)</h5>
+    <input type="text" [(ngModel)]="client">
+    <button (click)="agregarCliente(client)">Agregar Cliente</button>
+    <ul>
+        <li *ngFor="let cliente of clientes">
+            {{ cliente }}
+        </li>
+    </ul>
+</div>

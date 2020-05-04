@@ -1,0 +1,16 @@
+.jumbotron {
+    background-color: blue;
+    color: white;
+}
+
+hr {
+    background-color: aliceblue;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+h5 {
+    color: red;
+}
